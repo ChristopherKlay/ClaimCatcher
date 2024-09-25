@@ -1,5 +1,6 @@
 // App Settings
 var app = {
+  github: 'https://raw.githubusercontent.com/ChristopherKlay/ClaimCatcher/refs/heads/main/',
   prodPage: 'https://isthereanydeal.com/apps/2166/',
   storage: PropertiesService.getScriptProperties(),
   debug: false,
@@ -95,35 +96,35 @@ function getGiveaways() {
     
     switch(entry.storeFront) {
       case 'Steam':
-        entry.storeLogo = 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/768px-Steam_icon_logo.svg.png'
+        entry.storeLogo = app.github + 'media/storeIcons/steam.png'
         entry.storeColor = '746905'
         break
       case 'GOG':
-        entry.storeLogo = 'https://i.imgur.com/KEbiTlr.png'
+        entry.storeLogo = app.github + 'media/storeIcons/gog.png'
         entry.storeColor = '16579836'
         break
       case 'Amazon':
-        entry.storeLogo = 'https://i.imgur.com/UZj5xTJ.png'
+        entry.storeLogo = app.github + 'media/storeIcons/prime.png'
         entry.storeColor = '9324799'
         break
       case 'Epic Game Store':
-        entry.storeLogo = 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Epic_Games_logo.svg/662px-Epic_Games_logo.svg.png'
+        entry.storeLogo = app.github + 'media/storeIcons/epic.png'
         entry.storeColor = '2828586'
         break
       case 'IndieGala Store':
-        entry.storeLogo = 'https://i.imgur.com/n3dAgaW.png'
+        entry.storeLogo = app.github + 'media/storeIcons/indiegala.png'
         entry.storeColor = '15475239'
         break
       case 'Microsoft Store':
-        entry.storeLogo = 'https://upload.wikimedia.org/wikipedia/en/0/08/Microsoft_Store_app_icon.png'
+        entry.storeLogo = app.github + 'media/storeIcons/microsoft.png'
         entry.storeColor = '1071516'
         break
       case 'Fanatical':
-        entry.storeLogo = 'https://i.imgur.com/N6l3t3w.png'
+        entry.storeLogo = app.github + 'media/storeIcons/fanatical.png'
         entry.storeColor = '16750592'
         break
       default:
-        entry.storeLogo = 'https://i.imgur.com/mKtEhhn.png'
+        entry.storeLogo = app.github + 'media/storeIcons/default.png'
         entry.storeColor = '6710886'
         sendToDebug('store', entry)
     }
@@ -163,7 +164,7 @@ function getGiveaways() {
         "content": null,
         "embeds": [],
         "username": 'Claim Catcher',
-        "avatar_url": 'https://i.imgur.com/Co18S00.png',
+        "avatar_url": app.github + 'media/embedProfile/avatar.png',
         "attachments": []
       }
 
@@ -194,7 +195,7 @@ function getGiveaways() {
         'author': {
         'name': 'IsThereAnyDeal',
         'url': entry.giveawayLink,
-        'icon_url': 'https://i.imgur.com/5YK58Ox.png'
+        'icon_url': app.github + 'media/embedProfile/itad.png'
       },
         'image': {
           "url": 'https://assets.isthereanydeal.com/' + entry.id + '/banner600.jpg'
@@ -239,7 +240,7 @@ function sendToDebug(type, obj=null) {
       }
     ],
     "username": 'Claim Catcher',
-    "avatar_url": 'https://i.imgur.com/Co18S00.png',
+    "avatar_url": app.github + 'media/embedProfile/avatar.png',
     "attachments": []
   }
 
